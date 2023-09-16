@@ -44,10 +44,8 @@ const App = () => {
     setContacts(prev => [...prev, contact]);
   };
 
-  const deleteContact = e => {
-    const id = e.target.id;
-    const newArr = contacts.filter(cont => cont.id !== id);
-    setContacts(newArr);
+  const deleteContact = id => {
+    setContacts(prev => prev.filter(cont => cont.id !== id));
   };
 
   const updateFilter = filter => {

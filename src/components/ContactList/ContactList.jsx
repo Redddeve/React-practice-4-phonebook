@@ -9,9 +9,7 @@ const ContactList = ({ contacts, deleteContact }) => {
         {contacts.map(cont => (
           <StyledItem key={cont.id} id={cont.id}>
             {cont.name}: {cont.number}
-            <StyledBtn onClick={deleteContact} id={cont.id}>
-              Delete
-            </StyledBtn>
+            <StyledBtn onClick={() => deleteContact(cont.id)}>Delete</StyledBtn>
           </StyledItem>
         ))}
       </StyledList>
@@ -21,6 +19,7 @@ const ContactList = ({ contacts, deleteContact }) => {
 
 ContactList.propTypes = {
   contacts: PropTypes.array.isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };
 
 export default ContactList;
